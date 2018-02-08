@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="./">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Electron</title>
+    <style type="text/css">
+        #banner {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: Verdana;
+            margin: 10px;
+        }
+        #shellInfo {
+            margin: 10px;
+            line-height: 2;
+            font-size: 14px;
+            font-family: Verdana;
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log(process.versions);
+            
+            const { node, chrome, electron } = process.versions;
+            document.querySelector('#nodeVersion').innerHTML = node;
+            document.querySelector('#chromeVersion').innerHTML = chrome;
+            document.querySelector('#electronVersion').innerHTML = electron;
+        })
+    </script>
+</head>
+<body>
+    <div id="banner">Electron is up and running.</div>
+    <div>
+        <div>Node: <span id="nodeVersion"></span></div>
+        <div>Chrome: <span id="chromeVersion"></span></div>
+        <div>Electron: <span id="electronVersion"></span></div>
+    </div>
+</body>
+</html>
